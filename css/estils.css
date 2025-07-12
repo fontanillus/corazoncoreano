@@ -1,0 +1,57 @@
+body {
+    width: 90%;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: violet;
+    margin: 0 auto;
+}
+
+h1 {
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: 4px 4px 4px darkviolet;
+}
+
+/* Galería */
+.imagenes-drama {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.imagenes-drama figure {
+    margin: 0;
+    text-align: center;
+}
+
+.imagenes-drama img {
+    width: 310px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.imagenes-drama figcaption {
+    font-size: smaller;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}  
+
+@media (max-width: 768px) {
+    .imagenes-drama {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .imagenes-drama {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+

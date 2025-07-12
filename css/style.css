@@ -1,0 +1,43 @@
+/* Galería */
+.imagenes-hallyu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.imagenes-hallyu figure {
+    margin: 0;
+    text-align: center;
+}
+
+.imagenes-hallyu img {
+    width: 200px;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.imagenes-hallyu figcaption {
+    font-size: smaller;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}  
+
+@media (max-width: 768px) {
+    .imagenes-hallyu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .imagenes-hallyu {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
