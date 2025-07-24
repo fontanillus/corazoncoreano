@@ -12,7 +12,7 @@ h1 {
     text-shadow: 4px 4px 4px darkviolet;
 }
 
-/* Galería */
+/* ----------- GALERÍA ----------- */
 .imagenes-drama {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -39,19 +39,64 @@ h1 {
     font-weight: bold;
     color: #333;
     text-align: center;
-}  
-
-@media (max-width: 768px) {
-    .imagenes-drama {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
-@media (max-width: 480px) {
+/* -------------------------------
+   Móviles en vertical (hasta 480px)
+-------------------------------- */
+@media (max-width: 480px) and (orientation: portrait) {
     .imagenes-drama {
         grid-template-columns: 1fr;
     }
+
+    .imagenes-drama img {
+        width: 90%;
+        height: auto;
+    }
 }
+
+/* -------------------------------
+   Móviles en horizontal (landscape)
+-------------------------------- */
+@media (max-width: 480px) and (orientation: landscape) {
+    .imagenes-drama {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .imagenes-drama img {
+        width: 95%;
+        height: auto;
+    }
+}
+
+/* -------------------------------
+   Tablets vertical (portrait)
+-------------------------------- */
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
+    .imagenes-drama {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .imagenes-drama img {
+        width: 90%;
+        height: auto;
+    }
+}
+
+/* -------------------------------
+   Tablets horizontal (landscape)
+-------------------------------- */
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+    .imagenes-drama {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .imagenes-drama img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
 
 

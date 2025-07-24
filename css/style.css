@@ -25,19 +25,64 @@
     font-weight: bold;
     color: #333;
     text-align: center;
-}  
-
-@media (max-width: 768px) {
-    .imagenes-hallyu {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
-@media (max-width: 480px) {
+/* -------------------------------
+Móviles en vertical (≤ 480px)
+-------------------------------- */
+@media (max-width: 480px) and (orientation: portrait) {
     .imagenes-hallyu {
         grid-template-columns: 1fr;
     }
+
+    .imagenes-hallyu img {
+        width: 90%;
+        height: auto;
+    }
 }
+
+/* -------------------------------
+Móviles en horizontal
+-------------------------------- */
+@media (max-width: 480px) and (orientation: landscape) {
+    .imagenes-hallyu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .imagenes-hallyu img {
+        width: 95%;
+        height: auto;
+    }
+}
+
+/* -------------------------------
+Tablets vertical (481–1024px)
+-------------------------------- */
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
+    .imagenes-hallyu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .imagenes-hallyu img {
+        width: 90%;
+        height: auto;
+    }
+}
+
+/* -------------------------------
+Tablets horizontal (landscape)
+-------------------------------- */
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+    .imagenes-hallyu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .imagenes-hallyu img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
 
 

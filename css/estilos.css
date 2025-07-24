@@ -1,12 +1,23 @@
+/* ---------- ESTILOS BASE ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  width: 60%;
-  height: auto;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 100%;
+  max-width: 1200px;
+  /* Limitar el ancho máximo del body para mantenerlo alineado con el contenido */
   margin: 20px auto 0 auto;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-image: url(../img/corea.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  box-sizing: border-box;
+  /* Asegura que el tamaño de los elementos no se vea afectado por los bordes */
 }
 
 header {
@@ -14,30 +25,43 @@ header {
   margin-bottom: 10px;
 }
 
-
 header,
 main,
 nav {
   border: 5px solid darkmagenta;
   background-color: whitesmoke;
-  margin-bottom: 30px; /* espacio debajo*/
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  /* Asegura que el borde no afecte el tamaño del elemento */
 }
 
+
+/* ----------- NAV ----------- */
 nav {
-  margin: 0 95px auto;
-  display: block;
-  width: max-content;
-  
-}
-
-
-nav ul {
-  margin-left: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border: 5px solid darkmagenta;
+  height: 60px;
+  margin-bottom: 30px;
+}
+
+/* ----------- UL DINS DEL NAV ----------- */
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* ----------- LI ----------- */
+nav ul li {
   padding: 0 10px;
-  gap: 35px;
 }
 
 main {
@@ -61,29 +85,26 @@ h4 {
   text-align: center;
 }
 
-/* Eliminé .position porque no está usada en HTML */
-
 ul {
   list-style-type: none;
 }
 
+
 .box {
-  display: inline-flex;
-  /* Hace que se comporte como un contenedor flexible en línea */
-  align-items: center;
-  /* Alinea los ítems verticalmente al centro */
+  display: flex;
   justify-content: center;
-  /* Centra los ítems horizontalmente */
-  padding-right: 20%;
+  align-items: center;
   border: 5px solid darkmagenta;
   gap: 2rem;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 p {
   text-align: justify;
 }
 
+/* ---------- ANIMACIONES ---------- */
 @keyframes corazonCoreano {
   0% {
     transform: scale(1) rotate(0deg);
@@ -98,14 +119,6 @@ p {
   }
 }
 
-footer p {
-  font-weight: bold;
-  color: rgb(249, 228, 249);
-  font-size: small;
-  text-align: center;
-}
-
-/* Animación 1 */
 @keyframes latidoCorazon {
   0% {
     transform: scale(1) rotate(0deg);
@@ -120,15 +133,6 @@ footer p {
   }
 }
 
-.animacion-gesto img {
-  width: 150px;
-  /* o el tamaño que desees */
-  animation: latidoCorazon 5s infinite ease-in-out;
-  display: inline-block;
-  transform-origin: center center; /* Mejor control del giro y escala */
-}
-
-/* Animación 2 */
 @keyframes latir {
   0% {
     transform: scale(1);
@@ -143,10 +147,17 @@ footer p {
   }
 }
 
+.animacion-gesto img {
+  width: 150px;
+  animation: latidoCorazon 5s infinite ease-in-out;
+  display: inline-block;
+  transform-origin: center center;
+}
+
 .animados.corazon {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center;     /* Centra verticalmente si hay altura definida */
+  justify-content: center;
+  align-items: center;
   height: auto;
 }
 
@@ -159,36 +170,26 @@ footer p {
   display: inline-block;
   width: 100px;
   height: 100px;
-  line-height: 100px; /* centra el texto verticalmente */
-  font-size: 80px; /* tamaño del corazón */
+  line-height: 100px;
+  font-size: 80px;
   color: blueviolet;
   animation: latir 1.5s ease-in-out infinite;
   margin: 0 auto;
-  -webkit-user-select: none; /* Soporte Safari */
+  -webkit-user-select: none;
   user-select: none;
 }
 
-/* Para otros dispositivos */
-@media (max-width: 768px) {
-  body {
-    width: 90%;
-    margin-top: 10%;
-    background-size: cover; /* Cambiado de contain a cover para que no queden espacios vacíos */
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  div img {
-    width: 70%;
-  }
+footer p {
+  font-weight: bold;
+  color: rgb(249, 228, 249);
+  font-size: small;
+  text-align: center;
 }
 
+/* ---------- VIDEO RESPONSIVE ---------- */
 .responsive-video {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio (9/16 = 0.5625) */
+  padding-bottom: 56.25%;
   padding-top: 25px;
   height: 0;
   overflow: hidden;
@@ -202,4 +203,174 @@ footer p {
   height: 100%;
 }
 
+/* ------------------- MEDIA QUERIES ------------------- */
 
+/* Mòbils petits (fins a 480px) */
+@media (max-width: 480px) {
+  body {
+    width: 95%;
+    margin-top: 5%;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .box {
+    flex-direction: column;
+    padding-right: 0;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animados {
+    font-size: 40px;
+  }
+
+  .corazon {
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    line-height: 70px;
+  }
+
+  .animacion-gesto img {
+    width: 100px;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mòbils i tauletes petites (fins a 768px) */
+@media (max-width: 768px) {
+  body {
+    width: 90%;
+    margin-top: 10%;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  div img {
+    width: 70%;
+  }
+
+  .box {
+    flex-direction: column;
+    padding-right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .corazon {
+    width: 80px;
+    height: 80px;
+    font-size: 60px;
+    line-height: 80px;
+  }
+}
+
+/* Tauletes grans (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    width: 85%;
+    margin-top: 5%;
+  }
+
+  nav {
+    flex-direction: row;
+    height: auto;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .box {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .animacion-gesto img {
+    width: 120px;
+  }
+}
+
+/* Pantalles horitzontals fins a 1024px */
+@media (max-width: 1024px) and (orientation: landscape) {
+  body {
+    width: 95%;
+    margin-top: 2%;
+    font-size: 1rem;
+  }
+
+  nav {
+    flex-direction: row;
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .box {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .corazon {
+    width: 80px;
+    height: 80px;
+    font-size: 60px;
+    line-height: 80px;
+  }
+
+  .animacion-gesto img {
+    width: 100px;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+}
